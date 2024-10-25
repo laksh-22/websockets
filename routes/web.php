@@ -21,3 +21,13 @@ Route::get('/test', function () {
     event(new TestEvent('hell'));
     return response()->json(['message' => 'success']);
 });
+
+Route::get('/local', function () {
+    event(new \App\Events\LocalEvent('local'));
+    return response()->json(['message' => 'success']);
+});
+
+Route::get('/dedicated', function () {
+    event(new \App\Events\DedicatedEvent('dedicated'));
+    return response()->json(['message' => 'success']);
+});
