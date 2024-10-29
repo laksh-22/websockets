@@ -33,7 +33,8 @@ class WebSocketServer extends Command
         $a = app(SocketController::class);
         $this->info('starting websocket server');
         $server = IoServer::factory(new HttpServer(new WsServer($a)), 6002);
-//    $webSocketService->startWebSocketServer($socketController);
+
+
         $server->loop->addPeriodicTimer(5, function () use ($server, $a) {
 //            foreach ($server->clients as $client) {
 //                $client->send(json_encode(['timerrr']));
