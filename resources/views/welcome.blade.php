@@ -21,14 +21,30 @@
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;
 
-            var pusher = new Pusher('ef3279164956e0d4df71', {
-                cluster: 'ap2'
+            // var pusher = new Pusher('ef3279164956e0d4df71', {
+            //     cluster: 'ap2'
+            // });
+            //
+            // var channel = pusher.subscribe('dedicated-channel');
+            // channel.bind('dedicated-event', function(data) {
+            //     alert(JSON.stringify(data));
+            // });
+
+            var pusher = new Pusher('vvfvfvnvkjfnvioe930', {
+                wsHost: 'nd.faveodemo.com',  // The domain where your WebSocket server is running
+                // wsHost:window.location.hostname,
+                // wsPort: 6001,  // The port for non-secure connections (if you are using WS)
+                wssPort: 6001,  // The port for secure connections (if you are using WSS)
+                forceTLS: true, // Enable if you're using secure WebSocket (WSS)
+                encrypted: true, // Use secure connections (true for WSS)
+                cluster: ''
             });
 
             var channel = pusher.subscribe('local-channel');
             channel.bind('local-event', function(data) {
                 alert(JSON.stringify(data));
             });
+
         </script>
     </head>
     <body class="antialiased">
