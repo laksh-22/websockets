@@ -19,6 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/api/v3/installer', function () {
+    return response()->json('ok');
+});
+
+Route::post('/api/v3/newagent', function () {
+    return response()->json(['pk' => 1, 'token' => 'testToken']);
+});
+
+Route::post('/api/v3/installer', function () {
+    return response()->json('ok');
+});
+
+
 Route::get('/test', function () {
     event(new TestEvent('lakshyaaay'));
     return response()->json(['message' => 'success']);
