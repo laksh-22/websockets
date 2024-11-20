@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'fbf63467c363f1e99e4a65d339f3d7c4061b6325',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'basis-company/nats' => array(
+            'pretty_version' => '0.26.2',
+            'version' => '0.26.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../basis-company/nats',
+            'aliases' => array(),
+            'reference' => '6bcf486fa5dfeb76b3b2be52dcf53c92ff7ff663',
+            'dev_requirement' => false,
+        ),
         'beyondcode/laravel-websockets' => array(
             'pretty_version' => '1.14.1',
             'version' => '1.14.1.0',
@@ -425,12 +434,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'fbf63467c363f1e99e4a65d339f3d7c4061b6325',
             'dev_requirement' => false,
         ),
         'laravel/pint' => array(

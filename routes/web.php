@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NatsController;
 use App\Http\Controllers\SocketController;
 use App\Services\ConnectionStorageService;
 use Illuminate\Support\Facades\Route;
@@ -56,3 +57,9 @@ Route::get('/test-websocket-route', function () {
 });
 
 //\BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter::webSocket('/receive/websockets', \App\Services\MyCustomWebSocketHandler::class);
+
+/**
+ * NATS Section
+ */
+
+Route::get('/nats/check', [NatsController::class, 'setupNats']);
