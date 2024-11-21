@@ -18,6 +18,10 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
+    public function report(Throwable $exception) {
+        dd($exception);
+    }
+
     /**
      * Register the exception handling callbacks for the application.
      */

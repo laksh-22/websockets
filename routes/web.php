@@ -3,6 +3,8 @@
 use App\Http\Controllers\NatsController;
 use App\Http\Controllers\SocketController;
 use App\Services\ConnectionStorageService;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use App\Events\TestEvent;
 /*
@@ -24,7 +26,8 @@ Route::get('/api/v3/installer', function () {
     return response()->json('ok');
 });
 
-Route::post('/api/v3/newagent', function () {
+Route::post('/api/v3/newagent', function (Request $request) {
+    Log::info('rmm', (array)$request);
     return response()->json(['pk' => 1, 'token' => 'testToken']);
 });
 

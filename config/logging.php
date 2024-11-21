@@ -126,6 +126,10 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'nats' => [
+            'path' => storage_path('logs/nats/nats.log'),
+        ],
     ],
 
 ];

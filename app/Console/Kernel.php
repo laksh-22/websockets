@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\NatsListener;
 use App\Console\Commands\SecureWebsocketServer;
 use App\Console\Commands\WebSocketSecureServer;
 use App\Console\Commands\WebSocketServer;
@@ -14,6 +15,7 @@ class Kernel extends ConsoleKernel
         SecureWebsocketServer::class,
         WebSocketServer::class,
         WebSocketSecureServer::class,
+        NatsListener::class,
     ];
     /**
      * Define the application's command schedule.

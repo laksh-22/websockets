@@ -23,15 +23,42 @@ class NatsController extends Controller
             'user' => null,
             'nkey' => null,
             'verbose' => false,
-            'verify' => false,
             'version' => 'dev',
-            'tlsCertFile' => "/etc/letsencrypt/live/nd.faveodemo.com/fullchain.pem",
-            'tlsKeyFile'  => "/etc/letsencrypt/live/nd.faveodemo.com/privkey.pem",
         ]);
+//        $configuration = new Configuration([
+//            'host' => 'localhost',
+//            'jwt' => null,
+//            'lang' => 'php',
+//            'pass' => null,
+//            'pedantic' => false,
+//            'port' => 4222,
+//            'reconnect' => true,
+//            'timeout' => 1,
+//            'token' => null,
+//            'user' => null,
+//            'nkey' => null,
+//            'verbose' => false,
+////            'verify' => false,
+//            'version' => 'dev',
+//            'tlsCertFile' => "/etc/letsencrypt/live/nd.faveodemo.com/fullchain.pem",
+//            'tlsKeyFile'  => "/etc/letsencrypt/live/nd.faveodemo.com/privkey.pem",
+//        ]);
 
         $configuration->setDelay(0.001);
-
+//dd($configuration);
         $client = new Client($configuration);
-        dd($client->ping());
+        dump($client->ping());
+
+//        $queue = $client->subscribe('test.event');
+
+        $client->publish('test.event', 'lakshyaa');
+
+//        dump($queue->fetch()->payload->body);
+
+//        $client->publish('test.event', 'world');
+
+//        dump($queue->fetch()->payload->body);
+
+
     }
 }
